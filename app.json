@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Signage TV",
+    "slug": "signage-tv",
+    "version": "1.0.0",
+    "orientation": "landscape",
+    "scheme": "signagetv",
+    "platforms": ["android"],
+
+    "android": {
+      "package": "com.company.signagetv",
+      "permissions": [],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/logo.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "experimentalLaunchActivity": true,
+      "intentFilters": [
+        {
+          "action": "android.intent.action.MAIN",
+          "category": [
+            "android.intent.category.LEANBACK_LAUNCHER",
+            "android.intent.category.LAUNCHER"
+          ]
+        }
+      ]
+    }
+  }
+}
