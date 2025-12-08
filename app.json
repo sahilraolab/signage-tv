@@ -25,9 +25,7 @@
       ]
     },
     "extra": {
-      "eas": {
-        "projectId": "ae10429b-6fd5-4d50-8ca9-5594dd6e7417"
-      }
+      "BASE_URL": "https://api.techseventeen.com"
     }
   }
 }
