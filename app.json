@@ -5,8 +5,9 @@
     "version": "1.0.0",
     "orientation": "landscape",
     "scheme": "signagetv",
-    "platforms": ["android"],
-
+    "platforms": [
+      "android"
+    ],
     "android": {
       "package": "com.company.signagetv",
       "permissions": [],
@@ -24,6 +25,11 @@
           ]
         }
       ]
+    },
+    "extra": {
+      "eas": {
+        "projectId": "75f43fb8-dbfc-4df9-829d-3397988ded8d"
+      }
     }
   }
 }

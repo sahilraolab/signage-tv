@@ -4,10 +4,8 @@
   "main": "App.js",
   "private": true,
   "scripts": {
-    "start": "expo start",
-    "build:android": "expo build:android",
-    "android": "expo run:android",
-    "ios": "expo run:ios"
+    "start": "APP_ENV=development expo start",
+    "build:prod": "APP_ENV=production eas build -p android --profile production"
   },
   "dependencies": {
     "expo": "~51.0.0",
