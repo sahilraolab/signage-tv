@@ -1,6 +1,5 @@
-const BASE = __DEV__
-  ? "http://localhost:5000"
-  : "https://api.techseventeen.com";
+import Constants from "expo-constants";
+const BASE = Constants.expoConfig.extra.BASE_URL;
 
 export async function registerDevice(code) {
   const res = await fetch(`${BASE}/api/signage/tv/register`, {
@@ -8,7 +7,6 @@ export async function registerDevice(code) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ code })
   });
-
   return res.json();
 }
 

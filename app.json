@@ -5,9 +5,7 @@
     "version": "1.0.0",
     "orientation": "landscape",
     "scheme": "signagetv",
-    "platforms": [
-      "android"
-    ],
+    "platforms": ["android"],
     "android": {
       "package": "com.company.signagetv",
       "permissions": [],
@@ -27,7 +25,9 @@
       ]
     },
     "extra": {
-      "BASE_URL": "https://api.techseventeen.com"
+      "eas": {
+        "projectId": "ae10429b-6fd5-4d50-8ca9-5594dd6e7417"
+      }
     }
   }
 }
