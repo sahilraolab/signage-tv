@@ -14,6 +14,8 @@ export default function PairScreen({ onPaired }) {
       if (res.success && res.deviceId) {
         await saveDevice({ deviceId: res.deviceId });
         onPaired();
+      } else {
+        setStatus("Waiting for pairing...");
       }
     }
 

@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useRef } from "react";
-import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, StyleSheet, TouchableWithoutFeedback, Text } from "react-native";
 import { fetchPlaylist } from "../utils/api";
 import { getStoredDevice } from "../utils/storage";
 import usePolling from "../hooks/usePolling";
@@ -38,7 +38,13 @@ export default function PlayerScreen({ onReset }) {
     return () => clearTimeout(timer);
   }, [index, mediaList]);
 
-  if (mediaList.length === 0) return null;
+  if (mediaList.length === 0) {
+    return (
+      <View style={styles.container}>
+        <Text style={{ color: "white" }}>Loading playlist…</Text>
+      </View>
+    );
+  }
 
   const item = mediaList[index];
 
@@ -46,7 +52,10 @@ export default function PlayerScreen({ onReset }) {
     <TouchableWithoutFeedback onLongPress={onReset}>
       <View style={styles.container}>
         {item.type === "video" ? (
-          <VideoPlayer uri={item.url} onEnd={() => setIndex((i) => (i + 1) % mediaList.length)} />
+          <VideoPlayer
+            uri={item.url}
+            onEnd={() => setIndex((i) => (i + 1) % mediaList.length)}
+          />
         ) : (
           <ImagePlayer uri={item.url} />
         )}

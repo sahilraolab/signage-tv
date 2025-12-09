@@ -5,27 +5,60 @@
     "version": "1.0.0",
     "orientation": "landscape",
     "scheme": "signagetv",
+    "owner": "sahilyadav",
     "platforms": ["android"],
+
     "android": {
       "package": "com.company.signagetv",
       "permissions": [],
+
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#FFFFFF"
       },
-      "experimentalLaunchActivity": true,
+
+      "splash": {
+        "image": "./assets/logo.png",
+        "backgroundColor": "#FFFFFF",
+        "resizeMode": "contain"
+      },
+
+      /** Android TV support (safe + correct) **/
+      "tvBanner": "./assets/logo.png",
+      "tvSupport": true,
+
+      /** Explicit MAIN + LAUNCHER so phones can open */
       "intentFilters": [
         {
           "action": "android.intent.action.MAIN",
-          "category": [
-            "android.intent.category.LEANBACK_LAUNCHER",
-            "android.intent.category.LAUNCHER"
-          ]
+          "category": ["android.intent.category.LAUNCHER"]
+        },
+        {
+          "action": "android.intent.action.MAIN",
+          "category": ["android.intent.category.LEANBACK_LAUNCHER"]
         }
       ]
     },
+
+    "ios": {
+      "bundleIdentifier": "com.company.signagetv"
+    },
+
+    "plugins": [
+      "expo-asset",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFFFFF",
+          "image": "./assets/logo.png"
+        }
+      ]
+    ],
+
     "extra": {
-      "BASE_URL": "https://api.techseventeen.com"
+      "eas": {
+        "projectId": "77b89a29-537a-413c-8c0f-f1189eaa8f8d"
+      }
     }
   }
 }

@@ -9,8 +9,13 @@ export default function VideoPlayer({ uri, onEnd }) {
       resizeMode="contain"
       shouldPlay
       isLooping={false}
+      useNativeControls={false}
       onPlaybackStatusUpdate={(s) => {
         if (s.didJustFinish) onEnd();
+      }}
+      onError={(e) => {
+        console.log("Video error", e);
+        onEnd();
       }}
     />
   );

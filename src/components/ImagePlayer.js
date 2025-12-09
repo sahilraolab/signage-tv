@@ -7,7 +7,8 @@ export default function ImagePlayer({ uri }) {
       <Image
         source={{ uri }}
         resizeMode="contain"
-        style={{ width: "100%", height: "100%" }}
+        style={{ flex: 1 }}
+        onError={(e) => console.log("Image load error", e)}
       />
     </View>
   );
