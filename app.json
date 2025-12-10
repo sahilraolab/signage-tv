@@ -11,23 +11,15 @@
     "android": {
       "package": "com.company.signagetv",
       "permissions": [],
-
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#FFFFFF"
       },
-
       "splash": {
         "image": "./assets/logo.png",
         "backgroundColor": "#FFFFFF",
         "resizeMode": "contain"
       },
-
-      /** Android TV support (safe + correct) **/
-      "tvBanner": "./assets/logo.png",
-      "tvSupport": true,
-
-      /** Explicit MAIN + LAUNCHER so phones can open */
       "intentFilters": [
         {
           "action": "android.intent.action.MAIN",
